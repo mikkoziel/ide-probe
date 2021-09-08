@@ -8,5 +8,5 @@ index ba79cd0bd..e66514907 100755
    source "$(venv_dir)/bin/activate"
 +  $(venv_dir)/bin/pip3 install setuptools==57.5.0
  }
-
+ 
  function remove_venv() {
