@@ -74,6 +74,12 @@ object PantsSetup extends ConfigFormat {
           throw new IllegalStateException(s"Could not checkout $ref in ${git.path}")
       }
     }
+    val patchPath = Paths.get(targetPath.toString,  "..", "resources", "fix-setuptools.patch")
+    Console.println(patchPath.toString)
+    Shell.run(targetPath, "git", "apply", patchPath.toString)
+    Shell.run(targetPath, "./scripts/cleanup-after-ij.sh")
+//    Shell.run(targetPatch, “git”, “apply”, “plik z patchem który musisz jakoś dopchać“)
+//    Shell.run(./scripts/cleanup-after-ij.sh)
     targetPath
   }
 

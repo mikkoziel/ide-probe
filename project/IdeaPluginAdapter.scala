@@ -23,6 +23,11 @@ object IdeaPluginAdapter {
         .settings(Compile / resourceGenerators += (alternativeVersion / packageArtifactZip).map(List(_)).taskValue)
     }
 
+    def usesIdeaPlugins(basePlugin: Project): Project = {
+      project
+        .usesIdeaPlugin(basePlugin)
+    }
+
     def enableIdeaPluginDevelopment: Project = {
       disableDefaultIdeaPlugins.enablePlugins(IdeaPluginDevelopment)
     }

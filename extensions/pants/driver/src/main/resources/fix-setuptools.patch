@@ -1,0 +1,12 @@
+diff --git a/build-support/pants_venv b/build-support/pants_venv
+index ba79cd0bd..e66514907 100755
+--- a/build-support/pants_venv
++++ b/build-support/pants_venv
+@@ -26,6 +26,7 @@ function activate_venv() {
+   # place, Shellcheck will not be able to find it so we tell Shellcheck to ignore the file.
+   # shellcheck source=/dev/null
+   source "$(venv_dir)/bin/activate"
++  $(venv_dir)/bin/pip3 install setuptools==57.5.0
+ }
+
+ function remove_venv() {
